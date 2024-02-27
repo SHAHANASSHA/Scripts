@@ -2,9 +2,9 @@
 
 #ADD A USER
 
-read -p "Enter username: " username
-read -p "Enter gcoz: " gcoz
-read -p "Enter shell: " shell
+read -p "Enter the username: " username
+read -p "Enter the gcoz: " gcoz
+read -p "Enter the shell: " shell
 
 if id "$username" &>/dev/null
 then
