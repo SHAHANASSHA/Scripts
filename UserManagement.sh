@@ -8,11 +8,11 @@ read -p "Enter the shell: " shell
 
 if id "$username" &>/dev/null
 then
-	echo "User $username already exist!!"
+	echo "User $username already exist"
 else
 	sudo useradd -c $gcoz -md /home/$username -s /bin/$shell "$username"
 	sudo passwd "$username"
-	echo "User $username added successfully!!"
+	echo "User $username added successfully"
 fi
 
 #EXIST OR NOT
@@ -20,9 +20,9 @@ fi
 read -p "Enter shell: " shell
 if grep /bin/$shell /etc/passwd
 then
-	echo "User with shell $shell found!!"
+	echo "User with shell $shell found"
 else
-	echo "User with shell $shell not found!!"
+	echo "User with shell $shell not found"
 fi
 
 #REMOVE A USER
