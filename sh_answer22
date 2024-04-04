@@ -1,0 +1,12 @@
+#!/bin/bash
+echo "Load Average: "
+uptime|cut -d: -f5
+echo
+load_average=$(uptime|cut -d: -f5|awk '{print $1}'|cut -d, -f1)
+if (( $(echo "$load_average >= 2.0" | bc -l)))
+then
+echo "Alert!!"
+else
+echo "System load normal!!"
+fi
+

@@ -1,0 +1,11 @@
+#!/bin/bash
+echo "Disk usage of root FS: "
+df -h /
+echo
+disk_usage=$(df -h|grep /dev/sda4|awk '{print $5}'|cut -d% -f1)
+if [ "$disk_usage" -gt 90 ]
+then
+echo "The disk usage high!!"
+else
+echo "The disk usage normal!!"
+fi

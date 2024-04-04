@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo "Enter the directory: "
+read directory
+find "$directory" -type f -size +1M -exec ls -lh {} \;
+if [ -n "$(find "$directory" -type f -size +1M)" ]
+then
+echo "Files with size greater than 1 MB printed succesfully!!"
+else
+echo "No files with size greater than 1 MB!!"	
+fi

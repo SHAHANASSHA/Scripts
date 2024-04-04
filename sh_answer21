@@ -1,0 +1,10 @@
+#!/bin/bash
+echo "Enter the username: "
+read username
+Users=$(grep sudo /etc/group|cut -d: -f4)
+if echo "$Users"|grep -qw "$username" 
+then
+echo "User member of sudo group!!"
+else
+echo "User not a member of sudo group!!"
+fi

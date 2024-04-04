@@ -1,0 +1,13 @@
+#!/bin/bash
+echo "Enter the username: "
+read username
+echo "Home Directory: "
+eval echo $username
+echo
+home_directory=$(grep $username /etc/passwd | cut -d: -f6)
+if [[ $home_directory == /home/* ]]
+then
+echo "Home directory standard"
+else
+echo "Home directory non-standard"
+fi

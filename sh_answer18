@@ -1,0 +1,12 @@
+#!/bin/bash
+echo "Enter the service: "
+read service
+dpkg -l |grep $service
+if [ "$(dpkg -l |grep $service)" ]
+then
+echo "$service package installed!!"
+else 
+sudo apt install "$service"
+echo
+echo "$service package installed successfully!!"
+fi

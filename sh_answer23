@@ -1,0 +1,13 @@
+#!/bin/bash
+echo "Disk space of home directory: "
+df -h -BM /home
+echo
+threshold=1000
+disk_space=$(df -BM /home|tail -n 1|awk '{print $4}'|sed 's/M//')
+if [ "$disk_space" -gt "$threshold" ]
+then
+echo "The disk space is sufficient!!"
+else
+echo "Alert!!"
+fi
+

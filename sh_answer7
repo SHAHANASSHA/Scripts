@@ -1,0 +1,12 @@
+#!/bin/bash
+
+echo "Enter the path of the directory: "
+read directory
+sudo symlinks -vr "$directory"
+if [ -n "$(sudo symlinks -vr "$directory")" ]
+then
+echo
+echo "Symlinks printed successfully!!"
+else
+	echo "No symlinks found!!"
+fi

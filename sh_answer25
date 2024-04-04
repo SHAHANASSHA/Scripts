@@ -1,0 +1,11 @@
+#!/bin/bash
+uptime -p
+echo
+uptime=$(uptime|awk '{print $3}')
+if [ "$uptime" -lt 60 ]
+then
+echo "System started recently!!"
+else
+echo "System has been running for a while!!"
+fi
+

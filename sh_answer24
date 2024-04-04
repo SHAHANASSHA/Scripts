@@ -1,0 +1,11 @@
+#!/bin/bash
+echo "Enter the username: "
+read username
+if w|grep $username
+then
+echo 
+echo "User logged"
+else
+echo
+echo "User not logged"
+fi

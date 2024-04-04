@@ -1,0 +1,17 @@
+#!/bin/bash
+
+echo "Enter the username: "
+read username
+echo "Enter the gcoz: "
+read gcoz
+echo "Enter the shell: "
+read shell
+if id "$username" &>/dev/null
+then
+echo "User $username already exist!!"
+else
+sudo useradd -c $gcoz -md /home/$username -s /bin/$shell "$username"
+sudo passwd "$username"
+echo "User $username added successfully!!"
+fi
+
